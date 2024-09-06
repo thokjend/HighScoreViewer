@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import "./styles.css";
+import { SkillList } from "./components/SkillList";
 
 export default function App() {
   const [inputText, setInputText] = useState("");
@@ -28,22 +29,14 @@ export default function App() {
 
   return (
     <div className="container">
-      <Header />
-      <Input inputText={inputText} setInputText={setInputText} />
-      <Button onClick={() => fetchData(inputText)} />
-      {view && data && (
-        <>
-          <h2>Skills</h2>
-          <ul>
-            {data.skills.map((skill) => (
-              <li key={skill.id}>
-                <strong>{skill.name}</strong>: Rank {skill.rank}, Level{" "}
-                {skill.level}, XP {skill.xp}
-              </li>
-            ))}
-          </ul>
+      <div className="sub-container">
+        <Header />
+        <Input inputText={inputText} setInputText={setInputText} />
+        <Button onClick={() => fetchData(inputText)} />
+      </div>
+      <SkillList data={data} view={view}></SkillList>
 
-          <h2>Activities</h2>
+      {/* <h2>Activities</h2>
           <ul>
             {data.activities.map((activity) => (
               <li key={activity.id}>
@@ -51,9 +44,7 @@ export default function App() {
                 {activity.score}
               </li>
             ))}
-          </ul>
-        </>
-      )}
+          </ul> */}
     </div>
   );
 }
