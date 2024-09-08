@@ -27,4 +27,48 @@
   border: 1px solid black;
   width: 100px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: gray;
+  color: yellow;
+}
+img {
+  height: 30px;
+}
+
+.skill-level {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 20px;
+}
+
+/* .skill-part {
+  line-height: 10;
+  z-index: 1;
+} */
+
+.skill-part-top {
+  position: relative;
+  top: 10%;
+  right: 45%;
+}
+
+.skill-part-bottom {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+}
+
+.skill-separator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(135deg);
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  z-index: 0;
 }

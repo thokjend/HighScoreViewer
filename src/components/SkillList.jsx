@@ -59,16 +59,22 @@ export function SkillList({ data, view }) {
     return (
       <>
         <h2>Skills</h2>
+
         <div className="grid-container">
           {newList.map((skill, index) => (
             <div key={skill.id} className="grid-item">
-              <img
-                src={iconList[index]}
-                alt={`${skill.name && "Total level:"} icon`}
-              />
-
-              {skill.level}
-              {skill.name}
+              {index === 23 ? (
+                <span>Total level: {skill.level}</span>
+              ) : (
+                <>
+                  <img src={iconList[index]} alt={`${skill.name} icon`} />
+                  <div className="skill-level">
+                    <span className="skill-part-top">{skill.level}</span>
+                    <span className="skill-separator"></span>
+                    <span className="skill-part-bottom">{skill.level}</span>
+                  </div>
+                </>
+              )}
               {/* <strong>{skill.name}</strong>: Rank {skill.rank}, Level{" "}
               {skill.level}, XP {skill.xp} */}
             </div>
