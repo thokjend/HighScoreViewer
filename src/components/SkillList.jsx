@@ -1,4 +1,8 @@
-export function SkillList({ data, view }) {
+import { useState } from "react";
+
+export function SkillList({ data, view, name }) {
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
   const iconList = [
     "/Attack_icon.png",
     "/Hitpoints_icon.png",
@@ -58,11 +62,17 @@ export function SkillList({ data, view }) {
   if (data && view) {
     return (
       <>
+        <h2>Personal scores for {name}</h2>
         <h2>Skills</h2>
 
         <div className="grid-container">
           {newList.map((skill, index) => (
-            <div key={skill.id} className="grid-item">
+            <div
+              key={skill.id}
+              className="grid-item"
+              onMouseEnter={() => setHoveredSkill(skill)}
+              onMouseLeave={() => setHoveredSkill(null)}
+            >
               {index === 23 ? (
                 <span>Total level: {skill.level}</span>
               ) : (
@@ -75,8 +85,13 @@ export function SkillList({ data, view }) {
                   </div>
                 </>
               )}
-              {/* <strong>{skill.name}</strong>: Rank {skill.rank}, Level{" "}
-              {skill.level}, XP {skill.xp} */}
+              {hoveredSkill === skill && (
+                <div className="tooltip">
+                  <strong>Rank:</strong>{" "}
+                  {skill.rank === -1 ? "Unranked" : skill.rank} <br />
+                  <strong>XP:</strong> {skill.xp}
+                </div>
+              )}
             </div>
           ))}
         </div>

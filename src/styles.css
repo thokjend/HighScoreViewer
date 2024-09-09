@@ -1,3 +1,10 @@
+body {
+  background-image: url("Login_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -12,7 +19,7 @@
   border: 1px solid black;
   border-radius: 50px;
   padding: 5px;
-  background-color: rgb(100, 95, 102);
+  background-color: gray;
   color: aliceblue;
 }
 
@@ -25,14 +32,16 @@
 }
 .grid-item {
   border: 1px solid black;
-  width: 100px;
-  height: 50px;
+  width: 125px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: gray;
   color: yellow;
+  border-radius: 5px;
 }
+
 img {
   height: 30px;
 }
@@ -71,4 +80,49 @@ img {
   height: 2px;
   background-color: black;
   z-index: 0;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0.8;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 170px;
+  height: 25px;
+  border-radius: 10px;
+  border-style: none;
+  color: yellow;
+  background-color: hsl(0, 0%, 70%);
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: hsl(0, 0%, 60%);
+}
+
+.input-field {
+  margin-top: 1px;
+  font-weight: bolder;
+  font-size: medium;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
 }

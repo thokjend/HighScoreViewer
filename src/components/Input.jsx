@@ -3,5 +3,12 @@ export function Input({ inputText, setInputText }) {
     setInputText(e.target.value);
   };
 
-  return <input type="text" value={inputText} onChange={handleChange} />;
+  return (
+    <input
+      className="input-field"
+      type="text"
+      value={inputText}
+      onChange={handleChange}
+    />
+  );
 }

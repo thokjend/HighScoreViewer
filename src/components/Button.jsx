@@ -1,3 +1,7 @@
 export function Button({ onClick }) {
-  return <button onClick={onClick}>Search</button>;
+  return (
+    <button className="btn" onClick={onClick}>
+      Search
+    </button>
+  );
 }

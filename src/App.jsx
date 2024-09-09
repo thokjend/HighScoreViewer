@@ -2,13 +2,15 @@ import { useState } from "react";
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
-import "./styles.css";
 import { SkillList } from "./components/SkillList";
+import "./styles.css";
+import { Activities } from "./components/Activities";
 
 export default function App() {
   const [inputText, setInputText] = useState("");
   const [data, setData] = useState(null);
   const [view, setView] = useState(false);
+  const [searchedName, setSearchedName] = useState("");
 
   const fetchData = async (name) => {
     try {
@@ -21,6 +23,7 @@ export default function App() {
       const result = await response.json();
       setData(result);
       setView(true);
+      setSearchedName(name);
       console.log(result);
     } catch (error) {
       console.error("Fetch error:", error);
@@ -34,17 +37,8 @@ export default function App() {
         <Input inputText={inputText} setInputText={setInputText} />
         <Button onClick={() => fetchData(inputText)} />
       </div>
-      <SkillList data={data} view={view}></SkillList>
-
-      {/* <h2>Activities</h2>
-          <ul>
-            {data.activities.map((activity) => (
-              <li key={activity.id}>
-                <strong>{activity.name}</strong>: Rank {activity.rank}, Score{" "}
-                {activity.score}
-              </li>
-            ))}
-          </ul> */}
+      <SkillList data={data} view={view} name={searchedName}></SkillList>
+      <Activities data={data} view={view}></Activities>
     </div>
   );
 }
