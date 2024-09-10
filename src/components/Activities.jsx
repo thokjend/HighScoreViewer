@@ -3,14 +3,26 @@ export function Activities({ data, view }) {
     return (
       <>
         <h2>Activities</h2>
-        <ul>
-          {data.activities.map((activity) => (
-            <li key={activity.id}>
-              <strong>{activity.name}</strong>: Rank {activity.rank}, Score{" "}
-              {activity.score}
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr className="table-header">
+              <th>Name</th>
+              <th>Rank</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.activities.map((activity) =>
+              activity.rank !== -1 ? (
+                <tr className="yellow" key={activity.id}>
+                  <td>{activity.name}</td>
+                  <td>{activity.rank}</td>
+                  <td>{activity.score}</td>
+                </tr>
+              ) : null
+            )}
+          </tbody>
+        </table>
       </>
     );
 }

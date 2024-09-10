@@ -62,7 +62,7 @@ export function SkillList({ data, view, name }) {
   if (data && view) {
     return (
       <>
-        <h2>Personal scores for {name}</h2>
+        <h2 className="header-text">Personal scores for {name}</h2>
         <h2>Skills</h2>
 
         <div className="grid-container">
