@@ -14,5 +14,20 @@ This project is a React application that allows users to search for Old School R
 npm install concurrently
 ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running the Application
+
+```
+npm run dev
+```
+
+The application will be available at `http://localhost:5173/`
+
+## API Useage
+
+This application uses the OSRS Highscore API to fetch player statistics. The API endpoint is:
+
+```
+https://secure.runescape.com/m=hiscore_oldschool/index_lite.json?player=PLAYER_NAME
+```
+
+Replace `PLAYER_NAME` with the OSRS username you want to look up.
