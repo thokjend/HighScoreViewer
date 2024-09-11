@@ -22,7 +22,7 @@ npm run dev
 
 The application will be available at `http://localhost:5173/`
 
-## API Useage
+## API Usage
 
 This application uses the OSRS Highscore API to fetch player statistics. The API endpoint is:
 
