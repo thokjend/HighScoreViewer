@@ -19,7 +19,7 @@ body {
   align-items: center;
   border: 1px solid black;
   border-radius: 50px;
-  padding: 5px;
+  padding: 20px;
   background-color: gray;
 }
 
@@ -110,6 +110,12 @@ img {
   margin-top: 1px;
   font-weight: bolder;
   font-size: medium;
+}
+
+.error-text {
+  color: red;
+  padding-top: 5px;
+  font-size: 1.5em;
 }
 
 h1 {
