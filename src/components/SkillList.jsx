@@ -3,6 +3,8 @@ import { useState } from "react";
 export function SkillList({ data, view, name }) {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
+  if (!data || !view) return null;
+
   const iconList = [
     "/Attack_icon.png",
     "/Hitpoints_icon.png",
@@ -29,8 +31,6 @@ export function SkillList({ data, view, name }) {
     "/Hunter_icon.png",
     "",
   ];
-
-  if (!data || !view) return null;
 
   const newList = [
     data.skills[1],
