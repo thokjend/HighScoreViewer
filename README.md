@@ -11,7 +11,6 @@ This project is a React application that allows users to search for Old School R
 ## Install
 
 ```
-npm install
 npm install concurrently
 ```
 
