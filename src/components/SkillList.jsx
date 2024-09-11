@@ -32,7 +32,7 @@ export function SkillList({ data, view, name }) {
     "",
   ];
 
-  const newList = [
+  const fixedList = [
     data.skills[1],
     data.skills[4],
     data.skills[15],
@@ -66,7 +66,7 @@ export function SkillList({ data, view, name }) {
         <h2>Skills</h2>
 
         <div className="grid-container">
-          {newList.map((skill, index) => (
+          {fixedList.map((skill, index) => (
             <div
               key={skill.id}
               className="grid-item"
